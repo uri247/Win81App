@@ -1,0 +1,22 @@
+﻿/* CSS applied to the ListViews in this sample */
+.horizontalGrid, .verticalGrid, .horizontalList, .verticalList
+{
+    border: solid 2px rgba(0, 0, 0, 0.13);
+}
+
+.horizontalGrid, .verticalGrid, .horizontalList
+{
+    width: calc(100% - 4px);
+    height: 280px;
+}
+
+.verticalList
+{
+    width: 270px;
+    height: 290px;
+}
+
+.horizontalList
+{
+    height: 120px;
+}

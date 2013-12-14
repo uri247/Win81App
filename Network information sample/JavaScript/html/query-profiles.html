@@ -1,0 +1,56 @@
+﻿<!--
+Copyright (c) Microsoft Corporation. All rights reserved
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/css/query-profiles.css" />
+    <script src="/js/query-profiles.js"></script>
+</head>
+<body>
+    <div data-win-control="SdkSample.ScenarioInput">
+        <p>This scenario demostrates how to filter profiles based on profile query options.</p>
+        Connected Profiles:
+        <select id="isConnected" aria-labelledby="listLabel">
+            <option selected="selected" value="0">Do not care</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </select>
+        AND
+        <br />
+        Wwan Profiles:
+        <select id="isWwanProfile" aria-labelledby="listLabel">
+            <option selected="selected" value="0">Do not care</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </select>
+        AND
+        <br />
+        Wlan Profiles:
+        <select id="isWlanProfile" aria-labelledby="listLabel">
+            <option selected="selected" value="0">Do not care</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+        </select>
+        AND
+        <br />
+        Network cost type:
+        <select id="networkCostType" aria-labelledby="listLabel">
+            <option selected="selected" value="0">Do not care</option>
+            <option value="1">Unknown</option>
+            <option value="2">Unrestricted</option>
+            <option value="3">Fixed</option>
+            <option value="4">Variable</option>
+        </select>
+        AND
+        <br />
+        Provisioned CarrierId: <input type="text" id="carrierId"/><br />
+        <button id="submitButton">Submit</button>
+        <br /><br />
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+    </div>
+</body>
+</html>

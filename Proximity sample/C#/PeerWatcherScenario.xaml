@@ -1,0 +1,140 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<common:LayoutAwarePage
+    x:Class="Proximity.PeerWatcherScenario"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Proximity"
+    xmlns:common="using:SDKTemplate.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Input" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="HelpTextBlock1"  TextWrapping="Wrap" Grid.Row="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" >
+                When running this sample on multiple PCs, you can use the PeerWatcher from PeerFinder to find peers to connect to using a StreamSocket. 
+                Click 'Advertise' (on both PCs) and then click 'Start Watching for Peers' to dynamically discover nearby peers as they become visible.
+                The list will continue to update until you connect or click 'Stop Watching for Peers'. Click 'Connect To a Peer' to initiate the conneciton.
+            </TextBlock>
+            <Grid x:Name="PeerFinder_AdvertiseGrid" Margin="0,20,0,0" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="HelpTextBlockAdvertise"  TextWrapping="Wrap" Grid.Row="0" Style="{StaticResource BasicTextStyle}" Visibility="Collapsed" HorizontalAlignment="Left">
+                    Select a role (Host can connect to multiple clients, peers can connect to other peers) and optionally
+                    enter text to send with your name in the box. Click 'Advertise' to make this device visible and to allow it to browse for other peers.
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Row="1">
+                    <ComboBox x:Name="PeerFinder_SelectRole" Margin="0,0,10,0" Width="Auto" Height="35">
+                        <ComboBoxItem Name="Peer" IsSelected="True">Peer</ComboBoxItem>
+                        <ComboBoxItem Name="Host">Host</ComboBoxItem>
+                        <ComboBoxItem Name="Client">Client</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox x:Name="PeerFinder_DiscoveryData" Width="200" Height="35" Margin="0,0,10,0" MaxLength="32"/>
+                    <Button x:Name="PeerFinder_AdvertiseButton" Content="Advertise" Click="PeerFinder_StartAdvertising" Margin="0,0,10,0"/>
+                    <Button x:Name="PeerFinder_StopAdvertiseButton" Content="Stop Advertising" Click="PeerFinder_StopAdvertising" Margin="0,0,10,0"/>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="PeerFinder_BrowseGrid" Grid.Row="2" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0" Grid.Row="1" Grid.Column="0">
+                    <Button x:Name="PeerFinder_StartPeerWatcherButton" Content="Start Watching for Peers" Click="PeerFinder_StartPeerWatcher" HorizontalAlignment="Stretch"/>
+                    <Button x:Name="PeerFinder_StopPeerWatcherButton" Content="Stop Watching for Peers" Click="PeerFinder_StopPeerWatcher" HorizontalAlignment="Stretch"/>
+                    <Button x:Name="PeerFinder_ConnectButton" Content="Connect To a Peer" Click="PeerFinder_Connect" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <Grid Margin="10,10,0,0" Grid.Row="1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.Resources>
+                        <CollectionViewSource x:Name="peerListCVS"/>
+                    </Grid.Resources>
+                    <TextBlock Grid.Row="0" Text="Peers Found:" Style="{StaticResource H2Style}"/>
+                    
+                    <TextBlock x:Name="PeerFinder_PeerListNoPeers" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+                        No peers found yet, continuing to monitor for peers as they are visible...
+                    </TextBlock>
+                    <ListView x:Name="PeerFinder_FoundPeersList" Width="auto" ItemsSource="{Binding Source={StaticResource peerListCVS}}" Grid.Row="1">
+                        <ListView.Resources>
+                            <local:BufferConverter x:Key="bufferConverter"/>
+                        </ListView.Resources>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0,20,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=DisplayName}" Style="{StaticResource BasicTextStyle}"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=DiscoveryData, Converter={StaticResource bufferConverter}}"  Style="{StaticResource BasicTextStyle}"/>
+                                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Path=Id}" Style="{StaticResource CaptionTextStyle}"  Margin="0,0,30,0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
+            <Grid x:Name="PeerFinder_ConnectionGrid" Grid.Row="3" Margin="0,10,0,0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Row="0">
+                    <Button x:Name="PeerFinder_SendButton" Content="Send Message" Click="PeerFinder_Send" Margin="0,0,10,0"/>
+                    <TextBox x:Name="PeerFinder_MessageBox" Width="400" Margin="0,0,10,0"/>
+                    <ComboBox x:Name="PeerFinder_SendToPeerList" Margin="0,0,10,0" Width="auto">
+                        <ComboBoxItem Name="AllPeers" IsSelected="True">All Peers</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Row="1">
+                    <Button x:Name="PeerFinder_AcceptButton" Content="Accept Connection Request" Click="PeerFinder_Accept" Margin="0,0,10,0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Margin="0,20,0,0">
+            <TextBlock x:Name="PeerFinderOutputText" Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" />
+        </Grid>
+        
+        <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="DefaultLayout"/>
+                <VisualState x:Name="Below768Layout"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</common:LayoutAwarePage>

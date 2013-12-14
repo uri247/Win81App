@@ -1,0 +1,67 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<common:LayoutAwarePage
+    x:Class="StreamSocketSample.Scenario1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SDKTemplate"
+    xmlns:common="using:SDKTemplate.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Input" Grid.Row="0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="InputTextBlock1" TextWrapping="Wrap" Grid.Row="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Margin="0,0,0,20">
+                StreamSocketListener will create the 'server' side of a connection. It listens on a 'service name' (often a port number) and calls
+                a callback when it accepts a connection; this happens when some other application tries to connect. Once a connection is accepted, 
+                the acceptAsync() method needs to be called again.
+            </TextBlock>
+            <TextBlock Grid.Row="1" TextWrapping="Wrap" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" Margin="0,0,0,0">
+                Service name:  
+            </TextBlock>
+            <TextBox x:Name="ServiceNameForListener" Grid.Row="1" Text="22112" Margin="103,0,0,0" HorizontalAlignment="Left" Width="200"/>
+            <TextBlock Grid.Row="2" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                Optional settings:
+            </TextBlock>
+            <RadioButton x:Name="BindToAny" Grid.Row="3" Checked="BindToAny_Checked" Unchecked="BindToAny_Unchecked">Bind to any address</RadioButton>
+            <RadioButton x:Name="BindToAddress" Grid.Row="4">Bind to specific address (select from below list of IPv4 or IPv6)</RadioButton>
+            <RadioButton x:Name="BindToAdapter" Grid.Row="5">Bind to adapter (select an adapter based on the GUIDs below)</RadioButton>
+            <ComboBox x:Name="AdapterList" Grid.Row ="6" HorizontalAlignment="Left" Width="600" AllowDrop="True" IsEnabled="False"/>
+            <Button x:Name="StartListener" Content="Listen" Grid.Row="7" Margin="0,39,0,-39" Click="StartListener_Click"/>
+        </Grid>
+        <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2">
+        </Grid>
+        <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="DefaultLayout"/>
+                <VisualState x:Name="Below768Layout"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</common:LayoutAwarePage>

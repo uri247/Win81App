@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF1CD0D5-BF6B-457A-9927-8079FC667CA4}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tiles</RootNamespace>
+    <AssemblyName>Tiles</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="EnableNotificationQueue.xaml.cs">
+      <DependentUpon>EnableNotificationQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Globalization.xaml.cs">
+      <DependentUpon>Globalization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageProtocols.xaml.cs">
+      <DependentUpon>ImageProtocols.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationExpiration.xaml.cs">
+      <DependentUpon>NotificationExpiration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewAllTemplates.xaml.cs">
+      <DependentUpon>PreviewAllTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sample-Utils\SuspensionManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendBadge.xaml.cs">
+      <DependentUpon>SendBadge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendLocalImageTile.xaml.cs">
+      <DependentUpon>SendLocalImageTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendTextTile.xaml.cs">
+      <DependentUpon>SendTextTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendWebImageTile.xaml.cs">
+      <DependentUpon>SendWebImageTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsePushNotifications.xaml.cs">
+      <DependentUpon>UsePushNotifications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentDeduplication.xaml.cs">
+      <DependentUpon>ContentDeduplication.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\SplashScreen.contrast-black_scale-100.png" />
+    <Content Include="Assets\SplashScreen.contrast-white_scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\square150x150Tile-sdk.png" />
+    <Content Include="Assets\square30x30Tile-sdk.png" />
+    <Content Include="Assets\square310x310Tile-sdk.png" />
+    <Content Include="Assets\square70x70Tile-sdk.png" />
+    <Content Include="Assets\wide310x150Tile-sdk.png" />
+    <Content Include="Images\blueWide310x150.scale-80.png" />
+    <Content Include="Images\blueWide310x150.scale-100.png" />
+    <Content Include="Images\blueWide310x150.scale-140.png" />
+    <Content Include="Images\blueWide310x150.scale-180.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-80.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-100.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-140.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-180.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-80.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-100.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-140.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-180.png" />
+    <Content Include="Images\graySquare150x150.scale-80.png" />
+    <Content Include="Images\graySquare150x150.scale-100.png" />
+    <Content Include="Images\graySquare150x150.scale-140.png" />
+    <Content Include="Images\graySquare150x150.scale-180.png" />
+    <Content Include="Images\purpleSquare310x310.scale-80.png" />
+    <Content Include="Images\purpleSquare310x310.scale-100.png" />
+    <Content Include="Images\purpleSquare310x310.scale-140.png" />
+    <Content Include="Images\purpleSquare310x310.scale-180.png" />
+    <Content Include="Images\redWide310x150.scale-80.png" />
+    <Content Include="Images\redWide310x150.scale-100.png" />
+    <Content Include="Images\redWide310x150.scale-140.png" />
+    <Content Include="Images\redWide310x150.scale-180.png" />
+    <Content Include="Assets\microsoft-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\placeholder-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\smallTile-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\splash-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\squareTile-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\storeLogo-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\tile-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\tiles\TileSquare150x150Block.png" />
+    <Content Include="Images\tiles\TileSquare150x150Image.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText01.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText02.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText03.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText04.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text01.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text02.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text03.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text04.png" />
+    <Content Include="Images\tiles\TileSquare310x310BlockAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310BlockAndText02.png" />
+    <Content Include="Images\tiles\TileSquare310x310Image.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndText02.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndTextOverlay01.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndTextOverlay02.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndTextOverlay03.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageCollection.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageCollectionAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageCollectionAndText02.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImageAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList01.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList02.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList03.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList04.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList05.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text01.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text02.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text03.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text04.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text05.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text06.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text07.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text08.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text09.png" />
+    <Content Include="Images\tiles\TileSquare310x310TextList01.png" />
+    <Content Include="Images\tiles\TileSquare310x310TextList02.png" />
+    <Content Include="Images\tiles\TileSquare310x310TextList03.png" />
+    <Content Include="Images\tiles\TileWide310x150BlockAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150BlockAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150Image.png" />
+    <Content Include="Images\tiles\TileWide310x150ImageAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150ImageAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150ImageCollection.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage01.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage02.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage03.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage04.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage05.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage06.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection01.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection02.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection03.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection04.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection05.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection06.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText03.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText04.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText05.png" />
+    <Content Include="Images\tiles\TileWide310x150Text01.png" />
+    <Content Include="Images\tiles\TileWide310x150Text02.png" />
+    <Content Include="Images\tiles\TileWide310x150Text03.png" />
+    <Content Include="Images\tiles\TileWide310x150Text04.png" />
+    <Content Include="Images\tiles\TileWide310x150Text05.png" />
+    <Content Include="Images\tiles\TileWide310x150Text06.png" />
+    <Content Include="Images\tiles\TileWide310x150Text07.png" />
+    <Content Include="Images\tiles\TileWide310x150Text08.png" />
+    <Content Include="Images\tiles\TileWide310x150Text09.png" />
+    <Content Include="Images\tiles\TileWide310x150Text10.png" />
+    <Content Include="Images\tiles\TileWide310x150Text11.png" />
+    <Content Include="Assets\windows-sdk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Page Include="Globalization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageProtocols.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotificationExpiration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnableNotificationQueue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PreviewAllTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendBadge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendWebImageTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendLocalImageTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendTextTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsePushNotifications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentDeduplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sample-Utils\SampleTemplateStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="en-US\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NotificationsExtensions\NotificationsExtensions.csproj">
+      <Project>{6e87464b-b064-40ca-8161-7c18c337adff}</Project>
+      <Name>NotificationsExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- WinJS references -->
+    <link rel="stylesheet" href="//Microsoft.WinJS.2.0/css/ui-light.css" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <title></title>
+    <script src="/js/sendBadge.js"></script>
+</head>
+<body>
+    <div data-win-control="SdkSample.ScenarioInput">
+        <h3>This scenario demonstrates how to send a badge notification.</h3>
+        <p>
+            Badge notifications update your application's tile with a number or Windows provided glyph. Badges will be displayed on all tile sizes, including the small (square70x70) tile size.
+            <br />
+            <br />
+        </p>
+        <h3>Choose if you want to display a number or a glyph:</h3>
+        <select class="action" id="badgeTypeSelector">
+            <option value="Number">Number</option>
+            <option value="Glpyh">Glyph</option>
+        </select>
+        <br />
+        <br />
+        <div id="badgeNumber" style="display: block">
+            <h3>Enter a number between 1 and 99. Any number above 99 will be displayed on the tile as 99+:</h3>
+            <input id="badgeNumberInput" />
+        </div>
+        <div id="badgeGlyph" style="display: none">
+            <h3>Now choose the glyph you want to display:</h3>
+            <select class="action" id="badgeGlyphTypes">
+                <option value="none">none</option>
+                <option value="activity">activity</option>
+                <option value="alert">alert</option>
+                <option value="available">available</option>
+                <option value="away">away</option>
+                <option value="busy">busy</option>
+                <option value="newMessage">newMessage</option>
+                <option value="paused">paused</option>
+                <option value="playing">playing</option>
+                <option value="unavailable">unavailable</option>
+                <option value="error">error</option>
+                <option value="attention">attention</option>
+                <option value="alarm">alarm</option>
+            </select>
+        </div>
+        <br />
+        <br />
+        <h3>Send using the Notifications Extensions Library:</h3>
+        For the first example, we use the Notifications Extensions Library to build the notification payload.
+        <br />
+        <button class="action" id="sendBadgeNotification">Send badge notification</button>
+        <button class="action secondary" id="clearBadgeNotification">Clear badge</button>
+        <br />
+        <br />
+        <h3>Send by constructing your own payload:</h3>
+        Since notifications are simply XML, you can create them in many different ways. For example, here we create notifications by constructing strings.
+        <br />
+        <button id="sendBadgeNotificationWithStringManipulation">
+            Send badge notification created with strings</button>
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+    </div>
+</body>
+</html>

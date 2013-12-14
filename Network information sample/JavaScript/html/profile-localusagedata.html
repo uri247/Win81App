@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/css/profile-localusagedata.css" />
+    <script src="/js/profile-localusagedata.js"></script>
+</head>
+<body>
+    <div data-win-control="SdkSample.ScenarioInput">
+        <div>Granularity:</div>
+        <select id="GranularitySelect">
+            <option selected="selected">Per Minute</option>
+            <option>Per Hour</option>
+            <option>Per Day</option>
+            <option>Total</option>
+        </select>
+        <div>Roaming Data:</div>
+        <select id="RoamingSelect">
+            <option selected="selected">Do not care</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+        <div>Shared Data:</div>
+        <select id="SharedSelect">
+            <option selected="selected">Do not care</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+        <div>Start Time:</div>
+        <div id="StartDatePicker"></div><br />
+        <div id="StartTimePicker"></div>
+        <div>End Time:</div>
+        <div id="EndDatePicker"></div><br />
+        <div id="EndTimePicker"></div>
+        <button id="scenario2">Get Local Data Usage for Internet Connection Profile</button>
+        <br /><br />
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+    </div>
+</body>
+</html>

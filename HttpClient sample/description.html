@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=15EDE1F25211E852032D2691D5FEB7B8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/9d0720cf-bf50-484c-bf6c-77cf57a10f7cCombined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=52ADCBE5376E50AE6798D3D038D063E9" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>HttpClient sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/f1d4cd5b-ee0e-41ab-9a4f-a8fc36768c28Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>HttpClient sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Windows Runtime
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Windows RT
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">11/25/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>This sample shows how to use the <a href="http://msdn.microsoft.com/library/windows/apps/dn298639">
+<b>HttpClient</b></a> class in <a href="http://msdn.microsoft.com/library/windows/apps/dn279692">
+<b>Windows.Web.Http</b></a> namespace to upload and download various types of content from an HTTP server in Windows Store apps.
+</p>
+<p>This sample shows the use of asynchronous GET and POST requests using <a href="http://msdn.microsoft.com/library/windows/apps/dn298639">
+<b>HttpClient</b></a>. The sample also shows the use of caching and filters. Example filters are provided to handle retries and metered network connections.</p>
+<p>The <a href="http://msdn.microsoft.com/library/windows/apps/dn298639"><b>HttpClient</b></a> class is used to send and receive basic requests over HTTP. It is the main class for sending HTTP requests and receiving HTTP responses from a resource identified
+ by a URI. This class can be used to send a GET, PUT, POST, DELETE, and other requests to a web service. Each of these requests is sent as an asynchronous operation. The
+<b>HttpClient</b> class can be used in scenarios that use text as well as scenarios that use arbitrary streams of data.
+</p>
+<p>The <a href="http://msdn.microsoft.com/library/windows/apps/dn279692"><b>Windows.Web.Http</b></a> namespace and the related
+<a href="http://msdn.microsoft.com/library/windows/apps/dn252713"><b>Windows.Web.Http.Headers</b></a> and
+<a href="http://msdn.microsoft.com/library/windows/apps/dn298623"><b>Windows.Web.Http.Filters</b></a> namespaces in Windows&nbsp;8.1 and Windows Server&nbsp;2012&nbsp;R2 provide a programming interface for Windows Store apps that target HTTP services. The new HTTP API provides
+ consistent support in JavaScript, C#, VB.NET, and C&#43;&#43; for developers. This new API replaces the use of three different APIs with differing features that previously were needed for each language projection in Windows&nbsp;8.</p>
+<p>Classes in the <a href="http://msdn.microsoft.com/library/windows/apps/dn252713">
+<b>Windows.Web.Http.Headers</b></a> namespace represent HTTP headers defined in <a href="http://go.microsoft.com/fwlink/?LinkID=241642">
+RFC 2616</a> by the IETF. HTTP headers are associated with <a href="http://msdn.microsoft.com/library/windows/apps/dn279617">
+<b>HttpRequestMessage</b></a> and <a href="http://msdn.microsoft.com/library/windows/apps/dn279631">
+<b>HttpResponseMessage</b></a> objects as properties that are retrieved or set.</p>
+<p>Classes in the <a href="http://msdn.microsoft.com/library/windows/apps/dn279692">
+<b>Windows.Web.Http</b></a> namespace can use filters based on the classes in the
+<a href="http://msdn.microsoft.com/library/windows/apps/dn298623"><b>Windows.Web.Http.Filters</b></a> namespace. Filters provide a handler to help with common HTTP web service issues. Filters can be chained together in a sequence to address more complex web
+ service issues. Two filters are included in this sample to handle metered network connections and retry. The sample also shows how to use the
+<a href="http://msdn.microsoft.com/library/windows/apps/dn298616"><b>HttpCacheControl</b></a> class in the
+<b>Windows.Web.Http.Filters</b> namespace to control read or write cache behavior.</p>
+<p>This sample requires the following capabilities:</p>
+<ul>
+<li><b>Internet client</b> - Needed to send requests to HTTP servers on the Internet.
+</li><li><b>Home or work networking</b> - Needed when requests are sent to HTTP servers on a home or work intranet.
+</li></ul>
+<p></p>
+<p>Versions of this sample are provided in JavaScript, C#, VB, and C&#43;&#43;. This sample requires some experience with network programming.
+</p>
+<p>To obtain an evaluation copy of Windows&nbsp;8.1, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301696">
+Windows&nbsp;8.1</a>.</p>
+<p>To obtain an evaluation copy of Microsoft Visual Studio&nbsp;2013, go to <a href="http://go.microsoft.com/fwlink/p/?linkid=301697">
+Visual Studio&nbsp;2013</a>.</p>
+<h2><a id="related_topics"></a>Related topics</h2>
+<dl><dt><b>Other resources</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh452752">Adding support for networking</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh761442">Connecting to a WebSocket service</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh770532">How to configure network isolation capabilities</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh781240">How to secure HttpClient connections</a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/hh781239">Quickstart: Connecting using HttpClient</a>
+</dt><dt><b>Reference</b> </dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/dn298639"><b>HttpClient</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/dn279692"><b>Windows.Web.Http</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/dn252713"><b>Windows.Web.Http.Headers</b></a>
+</dt><dt><a href="http://msdn.microsoft.com/library/windows/apps/dn298623"><b>Windows.Web.Http.Filters</b></a>
+</dt><dt><b>Samples</b> </dt><dt><a href="http://go.microsoft.com/fwlink/p/?linkid=258323">ControlChannelTrigger HttpClient sample</a>
+</dt><dt><a href="http://go.microsoft.com/fwlink/p/?LinkID=227694">Windows 8 app samples</a>
+</dt></dl>
+<h2>Operating system requirements</h2>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h2>Build the sample</h2>
+<ol>
+<li>Start Visual Studio&nbsp;2013 and select <b>File &gt; Open &gt; Project/Solution</b>.
+</li><li>Go to the directory in which you unzipped the sample. Go to the directory named for the sample, and double-click the Microsoft Visual Studio Solution (.sln) file.
+</li><li>Press F7 or use <b>Build &gt; Build Solution</b> to build the sample. </li></ol>
+<h2>Run the sample</h2>
+<p>This sample requires that a web server is available for the app to access for uploading and downloading files. The web server must be started before the app is run. The web server must also have an
+<i>HttpClientSample</i> path available for uploads and downloads. The sample includes a PowerShell script that will install IIS on the local computer, create the
+<i>HttpClientSample</i> folder on the server, and copy files to this folder. </p>
+<p>The easiest way to run the sample is to use the provided web server scripts. Browse to the
+<i>Server</i> folder in your sample folder to setup and start the web server. There are two options possible.</p>
+<p></p>
+<ul>
+<li>Start PowerShell elevated (Run as administrator) and run the following command:
+<p><b>.\SetupServer.ps1</b></p>
+<p>Note that you may also need to change script execution policy. </p>
+</li><li>Start an elevated Command Prompt (Run as administrator) and run following command:
+<p><b>PowerShell.exe -ExecutionPolicy Unrestricted -File SetupServer.ps1</b></p>
+</li></ul>
+<p></p>
+<p>When the web server is not needed anymore, please browse to the <i>Server</i> folder in you sample folder and run one of the following:</p>
+<p></p>
+<ul>
+<li>Start PowerShell elevated (Run as administrator) and run the following command:
+<p><b>.\RemoveServer.ps1</b></p>
+<p>Note that you may also need to change script execution policy. </p>
+</li><li>Start an elevated Command Prompt (Run as administrator) and run following command:
+<p><b>PowerShell.exe -ExecutionPolicy Unrestricted -File RemoveServer.ps1</b></p>
+</li></ul>
+<p></p>
+<p>The sample can run using any web server, not only the one provided with the sample. If IIS is used on a different computer, then the previous scripts can be used with minor changes. The sample must also be updated when run against a non-localhost web server.
+</p>
+<p>However if a server different than IIS is used, then this requires some special configuration of the server to create the
+<i>HttpClientSample</i> folder. </p>
+<p>To configure the sample for use with a web server different than IIS not using localhost:</p>
+<dl><dd>Copy the <i>Server\webSite</i> directory to the <i>HttpClientSample</i> folder on the web server and configure the server to allow GET and POST requests.
+</dd><dd>Additional capabilities may need to be added. For example, &quot;Home or Work Networking&quot; if the web server is located on local intranet.
+</dd><dd>The target URI field should be updated. This can be handled in two ways by editing the HTML or XAML files. The AddressField TextBox can be changed (set IsEnabled=&quot;true&quot;) and add code to use try/catch blocks to handle invalid URI input. Alternately, the
+ text in the AddressField TextBox can be changed so it contains the correct URI to the web server to be used with the hostname or IP address of the web server substituted for localhost.
+</dd></dl>
+<p class="note"><b>Note</b>&nbsp;&nbsp;IIS is not available on ARM builds. Instead, set up the web server on a separate 64-bit or 32-bit computer and follow the steps for using the sample against non-localhost web server.
+</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;When used with the supplied scripts, this Windows Store app sample communicates with another process (IIS server which is a desktop app) on the same machine over loopback for demonstration purposes only. A Windows Store app that
+ communicates over loopback to another process that represents a Windows Store app is not allowed and such apps will not pass Store validation. For more information, see
+<a href="http://msdn.microsoft.com/library/windows/apps/hh770532">How to configure network isolation capabilities</a>.
+</p>
+<p></p>
+<p>To deploy this app after building it, select <b>Deploy Solution</b> from the <b>
+Build</b> menu. A tile for the sample will be available on the Start Screen. To both deploy and run the sample, press F5 (run with debugging enabled) or Ctrl&#43;F5 (run without debugging enabled) from Visual Studio&nbsp;2013 (any SKU). (Or select the corresponding
+ options from the Debug menu.) </p>
+<p>After the server computer has started, start the app on the local computer. </p>
+<dl><dd>A tile to start the app will be available on the Start Screen. </dd></dl>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

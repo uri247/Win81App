@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <ProjectGuid>{9ee3ba23-05ba-402a-a8b6-f3281c3f8b2c}</ProjectGuid>
+  </PropertyGroup>
+  <Import Condition="Exists('$(MSBuildExtensionsPath32)\$(MSBuildToolsVersion)\Microsoft.Common.props')" Project="$(MSBuildExtensionsPath32)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="default.html" />
+    <Content Include="html\globalization.html" />
+    <Content Include="html\imageManipulation.html" />
+    <Content Include="html\imageProtocols.html" />
+    <Content Include="html\notificationExpiration.html" />
+    <Content Include="html\enableNotificationQueue.html" />
+    <Content Include="html\sendBadge.html" />
+    <Content Include="html\previewAllTemplates.html" />
+    <Content Include="html\sendTextTile.html" />
+    <Content Include="html\sendLocalImageTile.html" />
+    <Content Include="html\sendWebImageTile.html" />
+    <Content Include="html\usePushNotifications.html" />
+    <Content Include="html\contentDeduplication.html" />
+    <Content Include="Images\blueWide310x150.scale-100.png" />
+    <Content Include="Images\blueWide310x150.scale-140.png" />
+    <Content Include="Images\blueWide310x150.scale-80.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-100.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-140.png" />
+    <Content Include="Images\contrast-black\graySquare150x150.scale-140.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-100.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-140.png" />
+    <Content Include="Images\contrast-white\graySquare150x150.scale-140.png" />
+    <Content Include="Images\graySquare150x150.scale-100.png" />
+    <Content Include="Images\graySquare150x150.scale-140.png" />
+    <Content Include="Images\graySquare150x150.scale-140.png" />
+    <Content Include="Images\graySquare150X150.scale-80.png" />
+    <Content Include="Images\purpleSquare310x310.scale-100.png" />
+    <Content Include="Images\purpleSquare310x310.scale-140.png" />
+    <Content Include="Images\purpleSquare310x310.scale-180.png" />
+    <Content Include="Images\purpleSquare310x310.scale-80.png" />
+    <Content Include="images\Square150x150Logo.contrast-black_scale-100.png" />
+    <Content Include="images\Square150x150Logo.contrast-white_scale-100.png" />
+    <Content Include="images\Square150x150Logo.scale-100.png" />
+    <Content Include="images\Square150x150Logo.scale-140.png" />
+    <Content Include="images\Square150x150Logo.scale-180.png" />
+    <Content Include="images\Square150x150Logo.scale-80.png" />
+    <Content Include="images\microsoft-sdk.png" />
+    <Content Include="images\placeholder-sdk.png" />
+    <Content Include="images\redWide310x150.scale-100.png" />
+    <Content Include="images\redWide310x150.scale-140.png" />
+    <Content Include="images\redWide310x150.scale-80.png" />
+    <Content Include="images\Square30x30Logo.contrast-black_scale-100.png" />
+    <Content Include="images\Square30x30Logo.contrast-white_scale-100.png" />
+    <Content Include="images\Square30x30Logo.scale-100.png" />
+    <Content Include="images\Square30x30Logo.scale-140.png" />
+    <Content Include="images\Square30x30Logo.scale-180.png" />
+    <Content Include="images\Square30x30Logo.scale-80.png" />
+    <Content Include="images\smallTile-sdk.png" />
+    <Content Include="images\splash-sdk.png" />
+    <Content Include="images\SplashScreen.contrast-black_scale-100.png" />
+    <Content Include="images\SplashScreen.contrast-white_scale-100.png" />
+    <Content Include="images\SplashScreen.scale-100.png" />
+    <Content Include="images\SplashScreen.scale-140.png" />
+    <Content Include="images\SplashScreen.scale-180.png" />
+    <Content Include="Images\square150x150Tile-sdk.png" />
+    <Content Include="Images\square30x30Tile-sdk.png" />
+    <Content Include="Images\square310x310Tile-sdk.png" />
+    <Content Include="Images\square70x70Tile-sdk.png" />
+    <Content Include="images\squareTile-sdk.png" />
+    <Content Include="images\storeLogo-sdk.png" />
+    <Content Include="images\tile-sdk.png" />
+    <Content Include="Images\tiles\TileSquare150x150Block.png" />
+    <Content Include="Images\tiles\TileSquare150x150Image.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText01.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText02.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText03.png" />
+    <Content Include="Images\tiles\TileSquare150x150PeekImageAndText04.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text01.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text02.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text03.png" />
+    <Content Include="Images\tiles\TileSquare150x150Text04.png" />
+    <Content Include="Images\tiles\TileSquare310x310BlockAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310BlockAndText02.png" />
+    <Content Include="Images\tiles\TileSquare310x310Image.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndText02.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndTextOverlay01.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndTextOverlay02.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageAndTextOverlay03.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageCollection.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageCollectionAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310ImageCollectionAndText02.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImageAndText01.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList01.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList02.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList03.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList04.png" />
+    <Content Include="Images\tiles\TileSquare310x310SmallImagesAndTextList05.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text01.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text02.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text03.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text04.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text05.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text06.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text07.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text08.png" />
+    <Content Include="Images\tiles\TileSquare310x310Text09.png" />
+    <Content Include="Images\tiles\TileSquare310x310TextList01.png" />
+    <Content Include="Images\tiles\TileSquare310x310TextList02.png" />
+    <Content Include="Images\tiles\TileSquare310x310TextList03.png" />
+    <Content Include="Images\tiles\TileWide310x150BlockAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150BlockAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150Image.png" />
+    <Content Include="Images\tiles\TileWide310x150ImageAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150ImageAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150ImageCollection.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage01.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage02.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage03.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage04.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage05.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImage06.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection01.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection02.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection03.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection04.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection05.png" />
+    <Content Include="Images\tiles\TileWide310x150PeekImageCollection06.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText01.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText02.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText03.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText04.png" />
+    <Content Include="Images\tiles\TileWide310x150SmallImageAndText05.png" />
+    <Content Include="Images\tiles\TileWide310x150Text01.png" />
+    <Content Include="Images\tiles\TileWide310x150Text02.png" />
+    <Content Include="Images\tiles\TileWide310x150Text03.png" />
+    <Content Include="Images\tiles\TileWide310x150Text04.png" />
+    <Content Include="Images\tiles\TileWide310x150Text05.png" />
+    <Content Include="Images\tiles\TileWide310x150Text06.png" />
+    <Content Include="Images\tiles\TileWide310x150Text07.png" />
+    <Content Include="Images\tiles\TileWide310x150Text08.png" />
+    <Content Include="Images\tiles\TileWide310x150Text09.png" />
+    <Content Include="Images\tiles\TileWide310x150Text10.png" />
+    <Content Include="Images\tiles\TileWide310x150Text11.png" />
+    <Content Include="Images\wide310x150Tile-sdk.png" />
+    <Content Include="images\windows-sdk.png" />
+    <Content Include="js\default.js" />
+    <Content Include="js\globalization.js" />
+    <Content Include="js\imageManipulation.js" />
+    <Content Include="js\imageProtocols.js" />
+    <Content Include="js\notificationExpiration.js" />
+    <Content Include="js\enableNotificationQueue.js" />
+    <Content Include="js\sendBadge.js" />
+    <Content Include="js\previewAllTemplates.js" />
+    <Content Include="js\sendTextTile.js" />
+    <Content Include="js\sendLocalImageTile.js" />
+    <Content Include="js\sendWebImageTile.js" />
+    <Content Include="js\usePushNotifications.js" />
+    <Content Include="js\contentDeduplication.js" />
+    <Content Include="sample-utils\sample-utils.css" />
+    <Content Include="sample-utils\footer.html" />
+    <Content Include="sample-utils\header.html" />
+    <Content Include="css\default.css" />
+    <Content Include="sample-utils\scenario-select.html" />
+    <Content Include="sample-utils\sample-utils.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NotificationsExtensions\NotificationsExtensions.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="en-US\resources.resjson" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+</Project>

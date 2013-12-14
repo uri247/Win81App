@@ -1,0 +1,34 @@
+﻿<!doctype HTML>
+<html>
+    <head>
+        <title>Help settings flyout</title>
+    </head>
+    <body>
+        <!-- BEGINSETTINGFLYOUT -->
+        <div data-win-control="WinJS.UI.SettingsFlyout" aria-label="Help settings flyout"
+             data-win-options="{settingsCommandId:'filter', width:'wide', onaftershow:afterShowHandler}">
+            <div class="win-ui-dark win-header" style="background-color:#00b2f0">
+               <div class="win-label">Metered Connection Filter Settings</div>
+            </div>
+            <div class="win-content ">
+                <div class="win-settings-section">
+                    <div id="optInSwitch" data-win-control="WinJS.UI.ToggleSwitch"
+                         data-win-options="{title: 'Opt-In'}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ENDSETTINGSFLYOUT -->
+        <script>
+            function afterShowHandler(event) {
+                function optInSwitchToggled() {
+                    Helpers.meteredConnectionFilter.optIn = document.getElementById("optInSwitch").winControl.checked;
+                }
+
+                document.getElementById("optInSwitch").winControl.checked = Helpers.meteredConnectionFilter.optIn;
+                document.getElementById("optInSwitch").addEventListener("change", optInSwitchToggled, false);
+            }
+            afterShowHandler.supportedForProcessing = true;
+        </script>
+    </body>
+</html>

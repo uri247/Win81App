@@ -1,0 +1,25 @@
+﻿<!--
+Copyright (c) Microsoft Corporation. All rights reserved
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/css/default.css" />
+    <script src="/js/S2-indirect-content-uri.js"></script>
+</head>
+<body>
+    <div data-win-control="SdkSample.ScenarioInput">
+        <p>This scenario allows you to add an indirect content uri for content prefetching or clear the indirect content uri. </p>
+        <p>To force the operating system to perform a prefetch of these contents in a developer scenario for testing, a desktop application must use the IContentPrefetcherTaskTrigger's TriggerContentPrefetcherTask method to trigger an immediate prefetch operation. See <a href="http://go.microsoft.com/fwlink/?LinkId=327984">http://go.microsoft.com/fwlink/?LinkId=327984</a> for more information.</p>
+    </div>
+    <div data-win-control="SdkSample.ScenarioOutput">
+        <p id="indirectContentUri"></p>
+        <input type="url" id="indirectContentUriField" />
+        <br />
+        <button id="setIndirectContentUri">Set indirect uri</button>
+        <button id="clearIndirectContentUri">Clear indirect uri</button>
+    </div>
+</body>
+</html>

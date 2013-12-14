@@ -1,0 +1,63 @@
+<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<common:LayoutAwarePage
+    x:Class="XAMLPopup.Scenario1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XAMLPopup"
+    xmlns:common="using:SDKTemplate.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Input" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="InputTextBlock1"  TextWrapping="Wrap" Grid.Row="0" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" >
+                The <Bold>Popup</Bold> class in XAML is a general purpose container for hosting child content (other UIElements) but serves primarily to host these 
+                child elements <Bold>on top of existing</Bold> content within your current Window. The Popup itself is not a UIElement and has no 
+                visual default template. Instead, you must set the content yourself. 
+                <LineBreak /><LineBreak />
+                You position the Popup by setting the HorizontalOffset and VerticalOffset properties or the 
+                Canvas.Left and Canvas.Top attached properties. Setting the Offset values will make the Popup appear offset 
+                from the parent control hosting it.
+                <LineBreak /><LineBreak />
+                The button below opens a Popup by setting its IsOpen property to true. This Popup is defined in XAML markup, and has
+                its child element set to a StackPanel containing some UIElements. The Popup child can be any FrameworkElement in XAML, 
+                such as a custom UserControl.
+                <LineBreak /><LineBreak />
+                To close a Popup, set the IsOpen property to false. This is demonstrated by the button hosted within the Popup example below.
+            </TextBlock>
+        </Grid>
+
+        <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <StackPanel>
+                <Button Content="Show Popup (using offset)" Click="ShowPopupOffsetClicked" />
+            </StackPanel>
+            <Popup VerticalOffset="10" HorizontalOffset="200" x:Name="StandardPopup">
+                <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" BorderThickness="2" Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Width="200" Height="200">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Simple Popup" FontSize="24.667" HorizontalAlignment="Center" />
+                        <Button Content="Close" Click="ClosePopupClicked" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Grid>
+    </Grid>
+</common:LayoutAwarePage>

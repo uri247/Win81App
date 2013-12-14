@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest"
+         xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="Microsoft.SDKSamples.AssociationLaunching.CPP" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>AssociationLaunching CPP sample</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>Assets\storeLogo-sdk.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="AssociationLaunching.App" Executable="$targetnametoken$.exe" EntryPoint="AssociationLaunching.App">
+      <VisualElements DisplayName="AssociationLaunching CPP sample" Logo="Assets\squareTile-sdk.png" SmallLogo="Assets\smallTile-sdk.png" Description="AssociationLaunching CPP sample" ForegroundText="light" BackgroundColor="#00b2f0">
+        <DefaultTile ShortName="AssociationLaunching C++" ShowName="allLogos" />
+        <SplashScreen Image="Assets\splash-sdk.png" BackgroundColor="#00b2f0" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name=".alsdkcpp" m2:DesiredView="useLess">
+            <SupportedFileTypes>
+              <FileType>.alsdkcpp</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+        <Extension Category="windows.protocol">
+          <Protocol Name="alsdkcpp" m2:DesiredView="useLess"/>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>

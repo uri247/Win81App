@@ -1,0 +1,311 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<common:LayoutAwarePage
+    x:Class="Tiles.PreviewAllTemplates"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Tiles"
+    xmlns:common="using:SDKTemplate.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Input" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Text="In this scenario you can pick any of the tile templates and insert your own text and images to see what they look like." FontWeight="SemiBold" />
+                <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Text="Ensure that the tile size matches the template size you are using." Margin="0,10,0,0"/>
+                <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Margin="0,20,0,0" Text="Select a template, fill in text and images, and configure branding" FontWeight="Bold" />
+
+                <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Text="Choose a Template:" Margin="0,5,0,0" FontWeight="SemiBold"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="TemplateList" Width="400" Margin="0,0,10,0" SelectionChanged="TemplateList_SelectionChanged">
+                        <ComboBoxItem x:Name="TileSquare150x150Image">TileSquare150x150Image</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150Block">TileSquare150x150Block</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150Text01">TileSquare150x150Text01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150Text02">TileSquare150x150Text02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150Text03">TileSquare150x150Text03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150Text04">TileSquare150x150Text04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150PeekImageAndText01">TileSquare150x150PeekImageAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150PeekImageAndText02">TileSquare150x150PeekImageAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150PeekImageAndText03">TileSquare150x150PeekImageAndText03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare150x150PeekImageAndText04">TileSquare150x150PeekImageAndText04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Image">TileWide310x150Image</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150ImageCollection">TileWide310x150ImageCollection</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150ImageAndText01">TileWide310x150ImageAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150ImageAndText02">TileWide310x150ImageAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150BlockAndText01">TileWide310x150BlockAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150BlockAndText02">TileWide310x150BlockAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageCollection01">TileWide310x150PeekImageCollection01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageCollection02">TileWide310x150PeekImageCollection02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageCollection03">TileWide310x150PeekImageCollection03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageCollection04">TileWide310x150PeekImageCollection04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageCollection05">TileWide310x150PeekImageCollection05</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageCollection06">TileWide310x150PeekImageCollection06</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageAndText01">TileWide310x150PeekImageAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImageAndText02">TileWide310x150PeekImageAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImage01">TileWide310x150PeekImage01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImage02">TileWide310x150PeekImage02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImage03">TileWide310x150PeekImage03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImage04">TileWide310x150PeekImage04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImage05">TileWide310x150PeekImage05</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150PeekImage06">TileWide310x150PeekImage06</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150SmallImageAndText01">TileWide310x150SmallImageAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150SmallImageAndText02">TileWide310x150SmallImageAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150SmallImageAndText03">TileWide310x150SmallImageAndText03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150SmallImageAndText04">TileWide310x150SmallImageAndText04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150SmallImageAndText05">TileWide310x150SmallImageAndText05</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text01">TileWide310x150Text01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text02">TileWide310x150Text02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text03">TileWide310x150Text03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text04">TileWide310x150Text04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text05">TileWide310x150Text05</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text06">TileWide310x150Text06</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text07">TileWide310x150Text07</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text08">TileWide310x150Text08</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text09">TileWide310x150Text09</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text10">TileWide310x150Text10</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileWide310x150Text11">TileWide310x150Text11</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310BlockAndText01">TileSquare310x310BlockAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310BlockAndText02">TileSquare310x310BlockAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Image">TileSquare310x310Image</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageAndText01">TileSquare310x310ImageAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageAndText02">TileSquare310x310ImageAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageAndTextOverlay01">TileSquare310x310ImageAndTextOverlay01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageAndTextOverlay02">TileSquare310x310ImageAndTextOverlay02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageAndTextOverlay03">TileSquare310x310ImageAndTextOverlay03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageCollectionAndText01">TileSquare310x310ImageCollectionAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageCollectionAndText02">TileSquare310x310ImageCollectionAndText02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310ImageCollection">TileSquare310x310ImageCollection</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310SmallImagesAndTextList01">TileSquare310x310SmallImagesAndTextList01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310SmallImagesAndTextList02">TileSquare310x310SmallImagesAndTextList02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310SmallImagesAndTextList03">TileSquare310x310SmallImagesAndTextList03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310SmallImagesAndTextList04">TileSquare310x310SmallImagesAndTextList04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text01">TileSquare310x310Text01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text02">TileSquare310x310Text02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text03">TileSquare310x310Text03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text04">TileSquare310x310Text04</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text05">TileSquare310x310Text05</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text06">TileSquare310x310Text06</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text07">TileSquare310x310Text07</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text08">TileSquare310x310Text08</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310TextList01">TileSquare310x310TextList01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310TextList02">TileSquare310x310TextList02</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310TextList03">TileSquare310x310TextList03</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310SmallImageAndText01">TileSquare310x310SmallImageAndText01</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310SmallImagesAndTextList05">TileSquare310x310SmallImagesAndTextList05</ComboBoxItem>
+                        <ComboBoxItem x:Name="TileSquare310x310Text09">TileSquare310x310Text09</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <TextBlock Style="{StaticResource BasicTextStyle}"  VerticalAlignment="Center"  Margin="0,20,0,0" FontWeight="SemiBold">Template preview:</TextBlock>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Left" Orientation="Vertical">
+                        <Image x:Name="Preview" Source="Images/tiles/TileWide310x150Image.png" Stretch="None" HorizontalAlignment="Left" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Orientation="Vertical" Margin="10,0,0,0" Width="400">
+                        <TextBox x:Name="TilePreviewDescription" TextWrapping="Wrap" BorderThickness="0" Padding="0" Visibility="Collapsed" />
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Style="{StaticResource BasicTextStyle}"  VerticalAlignment="Center"  Margin="0,20,0,0" FontWeight="SemiBold">Customize the Tile:</TextBlock>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Left" Orientation="Vertical" x:Name="TextInputs">
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 1: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 2: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 3: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 4: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 5: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 6: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 7: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 8: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 9: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 10: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 11: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 12: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 13: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 14: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 15: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 16: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 17: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 18: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 19: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 20: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 21: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Text Field 22: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Left" Orientation="Vertical" x:Name="ImageInputs" Margin="5,0,0,0">
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Image 1: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Image 2: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Image 3: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Image 4: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Image 5: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Visibility="Collapsed" Margin="0,3,0,0">
+                            <TextBlock Style="{StaticResource BasicTextStyle}" VerticalAlignment="Center" TextWrapping="Wrap" Text="Image 6: " />
+                            <TextBox Width="200"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button x:Name="UpdateTileNotification" Content="Send tile notification" Margin="0,0,10,0" Click="UpdateTileNotification_Click"/>
+                    <Button x:Name="ClearTile" Content="Clear Tile" Margin="0,0,10,0" Click="ClearTile_Click"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Text="Images" Margin="0,10,0,0" FontWeight="Bold"/>
+                    <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap">
+                                            Images can use
+                                            <LineBreak/>
+                                            http:// - web images
+                                            <LineBreak/>
+                                            ms-appx:/// - images in the .appx package
+                                            <LineBreak/>
+                                            ms-appdata:///local/ - images saved in the app's local storage
+                                            <LineBreak/>
+                                            For more information, see the Image Protocols scenario. You can also copy your own images to this app's local storage to test them in a notification.
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="CopyImages" Content="Copy images" Click="CopyImages_Click" />
+                        <Button x:Name="ViewImages" Content="View local images" Click="ViewImages_Click" />
+                    </StackPanel>
+                    <TextBlock x:Name="AvailableImages" IsTextSelectionEnabled="True" Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Margin="0,10,0,0" Text="Branding" FontWeight="Bold"/>
+                    <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap">
+                                            Applications can choose to use different branding for each notification, which impacts the layout of the template. If a logo or name is shown on the tile, some text fields will not display in certain templates. For example, if you send a notification with TileWide310x150Text06 with a logo, text fields 9 and 10 are clipped.
+                                            <LineBreak/>
+                                            Logo - specified in the manifest (default if branding is omitted)
+                                            <LineBreak/>
+                                            Name - specified in the manifest
+                                            <LineBreak/>
+                                            None - doesn't show logo or name
+                    </TextBlock>
+                    <ComboBox x:Name="Branding" HorizontalAlignment="Left" Width="200"  Margin="0,10,0,0">
+                        <ComboBoxItem x:Name="None">None</ComboBoxItem>
+                        <ComboBoxItem x:Name="Logo">Logo</ComboBoxItem>
+                        <ComboBoxItem x:Name="BrandName">Name</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Margin="0,20,0,0" Text="Language" FontWeight="Bold"/>
+                    <TextBlock Style="{StaticResource BasicTextStyle}" TextWrapping="Wrap" Text="Optionally set a language so Windows knows which font to use to display the text" />
+                    <TextBox x:Name="Lang" HorizontalAlignment="Left" Width="200" Text=""/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
+            <TextBlock x:Name="OutputTextBlock" Text="" TextWrapping="Wrap"  Style="{StaticResource BasicTextStyle}" IsTextSelectionEnabled="True"/>
+        </Grid>
+
+        <!-- Add Storyboards to the visual states below as necessary for supporting the various layouts -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="DefaultLayout"/>
+                <VisualState x:Name="Below768Layout"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+
+</common:LayoutAwarePage>

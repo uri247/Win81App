@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="Microsoft.SDKSamples.ScheduledNotifications.VB" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>ScheduledNotifcations Sample (VB)</DisplayName>
+    <PublisherDisplayName>Microsoft Corporation</PublisherDisplayName>
+    <Logo>Images\storeLogo-sdk.png</Logo>
+    <Description>ScheduledNotifcations Sample (VB)</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="ScheduledNotifications.App" Executable="ScheduledNotifications.exe" EntryPoint="ScheduledNotifications.App">
+      <m2:VisualElements DisplayName="ScheduledNotifcations Sample (VB)" Description="ScheduledNotifcations Sample (VB)" BackgroundColor="#00b2f0" ForegroundText="light" ToastCapable="true" Square150x150Logo="Images\squareTile-sdk.png" Square30x30Logo="Images\smallTile-sdk.png">
+        <m2:DefaultTile ShortName="ScheduledNotifcations Sample (VB)" Wide310x150Logo="Images\tile-sdk.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen BackgroundColor="#00b2f0" Image="Images\splash-sdk.png" />
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+</Package>
